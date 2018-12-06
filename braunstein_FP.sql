@@ -134,12 +134,12 @@ foreign key (department_ID)  REFERENCES department,
 PRIMARY KEY (employee_ID, department_ID) 
 );
 
-INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (1, 1, 1, 04221997, 15);
-INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (2, 1, 5, 11232018, 15);
-INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (3, 2, 4, 01012001, 15);
-INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (4, 2, 3, 11231963, 15);
-INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (5, 3, 2, 08211986, 15);
-INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (6, 4, 1, 09211992, 15);
+INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (1, 1, 1, 04221997, 15599);
+INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (2, 1, 5, 11232018, 59099);
+INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (3, 2, 4, 01012001, 89915);
+INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (4, 2, 3, 11231963, 586895);
+INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (5, 3, 2, 08211986, 176475);
+INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (6, 4, 1, 09211992, 345675);
 
 (select employee_ID, property_ID, department_ID  FROM employee_record);  
   
@@ -244,11 +244,12 @@ Prompt What are all the reasons patron have been black listed?;
 SELECT bl.offense FROM black_list bl WHERE bl.offense is not null;
 
 PROMPT What is the difference between Employee pay rate and department pay rate?
---SELECT department.pay_rate, department.department_ID, department.department_name
---SELECT employee.employee_ID, employee.f_name, employee.l_name, 
---SELECT employee_record.pay_rate, employee_record.employee_ID, employee_record.department_ID
-SELECT employee.employee_ID, employee.f_name, employee.l_name, employee_record.employee_ID, employee_record.pay_rate, department.pay_rate
-FROM  department, employee_record, employee    
-JOIN department on department.department_ID = employee_record.department_ID;
---JOIN employee_record.employee_ID on employee.employee_ID
+
+SELECT employee.employee_ID, employee.f_name, employee.l_name, (department.pay_rate-employee_record.pay_rate) AS diff_pay, department.department_name
+FROM employee 
+inner join employee_record on employee.employee_ID = employee_record.employee_ID
+INNER JOIN department on employee_record.department_id  = department.department_ID;   
+--FROM department, employee_record, employee 
+--JOIN department on department_ID = employee_record.department_ID;
+--JOIN employee_record employee_ID on employee.employee_ID
 desc department
