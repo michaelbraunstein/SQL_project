@@ -15,8 +15,7 @@ DROP TABLE booking CASCADE CONSTRAINTS;
 DROP TABLE customer CASCADE CONSTRAINTS;
 DROP TABLE reward_program CASCADE CONSTRAINTS;
 DROP TABLE black_list CASCADE CONSTRAINTS;
-DROP TABLE employee_record CASCADE CONSTRAINTS;
-
+DROP TABLE employee_record CASCADE CONSTRAINTS; 
 
 
 CREATE TABLE property (
@@ -78,34 +77,20 @@ desc room;
 
 CREATE TABLE department (
 department_ID number,
+pay_rate number,
 department_name VARCHAR2(59 CHAR),
 primary key (department_ID) 
 );
 
 desc department;
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (1, 1, 'management');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (1, 2, 'maintenance');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (1, 3, 'housecleaning');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (1, 4, 'catering');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (1, 5, 'reception');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (2, 1, 'management');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (2, 2, 'maintenance');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (2, 3, 'housecleaning');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (2, 4, 'catering');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (2, 5, 'reception');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (3, 1, 'management');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (3, 2, 'maintenance');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (3, 3, 'housecleaning');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (3, 4, 'catering');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (3, 5, 'reception');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (4, 1, 'management');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (4, 2, 'maintenance');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (4, 3, 'housecleaning');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (4, 4, 'catering');
-INSERT INTO department (property_ID, department_ID, department_name) VALUES (4, 5, 'reception');
+INSERT INTO department (department_ID, pay_rate, department_name) VALUES ( 1, 15000, 'management');
+INSERT INTO department (department_ID, pay_rate, department_name) VALUES ( 2, 10000, 'maintenance');
+INSERT INTO department (department_ID, pay_rate, department_name) VALUES ( 3, 8000, 'housecleaning');
+INSERT INTO department (department_ID, pay_rate, department_name) VALUES ( 4, 9000, 'catering');
+INSERT INTO department (department_ID, pay_rate, department_name) VALUES ( 5, 10000, 'reception'); 
 
 
-(select property_ID, department_ID, department_name from department);  
+(select department_ID, pay_rate, department_name from department);  
  (select * from department);
 
 
@@ -150,13 +135,13 @@ PRIMARY KEY (employee_ID, department_ID)
 );
 
 INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (1, 1, 1, 04221997, 15);
-INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (2, 2, 5, 11232018, 15);
-INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (3, 3, 4, 01012001, 15);
-INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (4, 4, 3, 11231963, 15);
-INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (5, 5, 2, 08211986, 15);
-INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (6, 6, 1, 09211992, 15);
+INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (2, 1, 5, 11232018, 15);
+INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (3, 2, 4, 01012001, 15);
+INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (4, 2, 3, 11231963, 15);
+INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (5, 3, 2, 08211986, 15);
+INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (6, 4, 1, 09211992, 15);
 
-(select employee_ID, property_ID, department FROM employee_record);  
+(select employee_ID, property_ID, department_ID  FROM employee_record);  
   
   (select * from employee_record);
 
@@ -174,13 +159,14 @@ credit_card_1_num VARCHAR2(21 CHAR),
 account_balance NUMBER(11) DEFAULT 0);
 
 desc customer;
+
 INSERT INTO customer VALUES (1,  'Max', 'Antin',  '950 Flemington St', 'second floor', 'Pittsburgh', 'PA', '15217', '11/29', '6011-999-9999', 0);
 INSERT INTO customer VALUES (2,  'Joseph', 'Antin',  '956 Flemington St', null, 'Pittsburgh', 'PA', '15217', '11/29', '6011-999-9999', 0);
 INSERT INTO customer VALUES (3,  'Florence', 'Antin',  '956 Flemington St', null, 'Pittsburgh', 'PA', '15217', '11/29', '6011-999-9999', 0);
 INSERT INTO customer VALUES (4,  'Brad', 'Rephen',  '11 Lime Kiln St', null, 'Spring Valley', 'NY', '10952', '11/29', '6011-999-9999', 0);
 INSERT INTO customer VALUES (5,  'Fred', 'Hart',  '17 Squadron Blvd', 'Suite 312', 'New City', 'NY', '10956', '11/29', '6011-999-9999', 0);
-INSERT INTO customer VALUES (6,  'Moshe', 'Tendler',  '89 W Maple Ave ', null, 'Monsey', 'NY', '10952', '11/29', '6011-999-9999', 0);
-INSERT INTO customer Values (7, 'JohnFitzgerald', 'Kennedy', '100 Marchant Avenue', null, 'Hyannis Port', 'MA', '02601', '11/63', '6011-999-9999', 0);
+INSERT INTO customer VALUES (6,  'George HW', 'BUSH',  '2430 E ST NW ', 'Suite 219', 'Washington', 'DC', '20037', '11/29', '6011-999-9999', 0);
+INSERT INTO customer Values (7, 'John Fitzgerald', 'Kennedy', '100 Marchant Avenue', null, 'Hyannis Port', 'MA', '02601', '11/63', '6011-999-9999', 0);
 (select customer_ID, f_name, l_name, address_1_line_1, address_1_line_2, address_1_city, address_1_state, address_1_zip, credit_card_1_exp, credit_card_1_num, account_balance from customer); 
   (select * from customer);
 
@@ -203,9 +189,10 @@ INSERT INTO booking (customer_ID, room_ID, property_ID, number_days, reservation
 INSERT INTO booking (customer_ID, room_ID, property_ID, number_days, reservation_date) VALUES (3, 3, 3, 5, 223114);
 INSERT INTO booking (customer_ID, room_ID, property_ID, number_days, reservation_date) VALUES (4, 1, 1, 3, 232111);
 INSERT INTO booking (customer_ID, room_ID, property_ID, number_days, reservation_date) VALUES (5, 2, 2, 2, 223331);
-INSERT INTO booking (customer_ID, room_ID, property_ID, number_days, reservation_date) VALUES (6, 3, 3, 1, 223451);
+INSERT INTO booking (customer_ID, room_ID, property_ID, number_days, reservation_date) VALUES (6, 2, 4, 1, 223451);
 INSERT INTO booking (customer_ID, room_ID, property_ID, number_days, reservation_date) VALUES (7, 3, 4, 4, 112363);
-INSERT INTO booking (customer_ID, room_ID, property_ID, number_days, reservation_date) VALUES (6, 2, 4, 4, 112363);
+INSERT INTO booking (customer_ID, room_ID, property_ID, number_days, reservation_date) VALUES (6, 6, 4, 2, 112363);
+
 (select customer_ID, number_days, reservation_date from booking);  
   select * from booking;
  
@@ -222,6 +209,7 @@ offense VARCHAR2 ( 59)
 );
 
 INSERT INTO black_list (customer_ID, property_ID, offense) VALUES (1, 1, 'Monkey Business');
+INSERT INTO black_list (customer_ID, property_ID, offense) VALUES (6, 1, 'Assasinating the president');
 
 desc black_list;
 (select customer_ID, property_ID, offense from black_list);  
@@ -240,8 +228,27 @@ INSERT INTO reward_program (customer_ID, points)  VALUES (1,  95);
 select * from reward_program;
 SELECT*FROM   (reward_program); 
   
-PROMPT Who was staying in the Dallas Hilton on November 23, 1963?
-SELECT customer_ID, number_days, reservation_date 
-from booking 
-where reservation_date = 11231963
-FROM booking;
+PROMPT Who was staying in the Dallas Hilton on November 23, 1963?;
+SELECT b.reservation_date, b.customer_ID, customer.f_name, customer.l_name, customer.customer_ID 
+FROM  booking b    
+JOIN customer on b.customer_ID = customer.customer_ID
+WHERE b.reservation_date = 112363 and property_ID = 4;
+
+PROMPT How many customers are from Pittsburgh?;
+SELECT c.customer_ID, c.f_name, c.l_name 
+FROM customer c  
+WHERE c.address_1_city = 'Pittsburgh'
+ORDER BY c.l_name, c.f_name;
+
+Prompt What are all the reasons patron have been black listed?;
+SELECT bl.offense FROM black_list bl WHERE bl.offense is not null;
+
+PROMPT What is the difference between Employee pay rate and department pay rate?
+--SELECT department.pay_rate, department.department_ID, department.department_name
+--SELECT employee.employee_ID, employee.f_name, employee.l_name, 
+--SELECT employee_record.pay_rate, employee_record.employee_ID, employee_record.department_ID
+SELECT employee.employee_ID, employee.f_name, employee.l_name, employee_record.employee_ID, employee_record.pay_rate, department.pay_rate
+FROM  department, employee_record, employee    
+JOIN department on department.department_ID = employee_record.department_ID;
+--JOIN employee_record.employee_ID on employee.employee_ID
+desc department
