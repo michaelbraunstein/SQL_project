@@ -31,6 +31,7 @@ PRIMARY KEY (property_ID)
 );
 
 desc property;
+
 INSERT INTO property VALUES (1, 'Empire State Building', '350 Fifth Avenue', null, 'New York', 'NY', '10036');
 INSERT INTO property VALUES (2, 'King David Hotel', '23 King David', 'Tel Aviv', null, 'IL', '1q4g6');
 INSERT INTO property VALUES (3, 'Beverly Wilshire Hotel', '9500 Wilshire Blvd', null, 'Beverly Hills', 'CA', '90212');
@@ -76,10 +77,9 @@ insert into room   (property_ID, room_ID, room_type) VALUES  (4, 6, 'dble');
 desc room;
 
 CREATE TABLE department (
-property_ID REFERENCES property, 
 department_ID number,
-primary key (property_ID, department_ID) ,
-department_name VARCHAR2 (59 CHAR)
+department_name VARCHAR2(59 CHAR),
+primary key (department_ID) 
 );
 
 desc department;
@@ -146,7 +146,7 @@ pay_rate number,
 foreign key (employee_ID) REFERENCES employee,
 foreign key (property_ID) REFERENCES property,
 foreign key (department_ID)  REFERENCES department,
-PRIMARY KEY (employee_ID, property_ID, department_ID) 
+PRIMARY KEY (employee_ID, department_ID) 
 );
 
 INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date, pay_rate) VALUES (1, 1, 1, 04221997, 15);
@@ -180,7 +180,7 @@ INSERT INTO customer VALUES (3,  'Florence', 'Antin',  '956 Flemington St', null
 INSERT INTO customer VALUES (4,  'Brad', 'Rephen',  '11 Lime Kiln St', null, 'Spring Valley', 'NY', '10952', '11/29', '6011-999-9999', 0);
 INSERT INTO customer VALUES (5,  'Fred', 'Hart',  '17 Squadron Blvd', 'Suite 312', 'New City', 'NY', '10956', '11/29', '6011-999-9999', 0);
 INSERT INTO customer VALUES (6,  'Moshe', 'Tendler',  '89 W Maple Ave ', null, 'Monsey', 'NY', '10952', '11/29', '6011-999-9999', 0);
-INSERT INTO customer Values (7, 'John Fitzgerald', 'Kennedy', '100 Marchant Avenue', null, 'Hyannis Port', 'MA', '02601' '11/63' '6011-999-9999', 0);
+INSERT INTO customer Values (7, 'JohnFitzgerald', 'Kennedy', '100 Marchant Avenue', null, 'Hyannis Port', 'MA', '02601', '11/63', '6011-999-9999', 0);
 (select customer_ID, f_name, l_name, address_1_line_1, address_1_line_2, address_1_city, address_1_state, address_1_zip, credit_card_1_exp, credit_card_1_num, account_balance from customer); 
   (select * from customer);
 
@@ -205,6 +205,7 @@ INSERT INTO booking (customer_ID, room_ID, property_ID, number_days, reservation
 INSERT INTO booking (customer_ID, room_ID, property_ID, number_days, reservation_date) VALUES (5, 2, 2, 2, 223331);
 INSERT INTO booking (customer_ID, room_ID, property_ID, number_days, reservation_date) VALUES (6, 3, 3, 1, 223451);
 INSERT INTO booking (customer_ID, room_ID, property_ID, number_days, reservation_date) VALUES (7, 3, 4, 4, 112363);
+INSERT INTO booking (customer_ID, room_ID, property_ID, number_days, reservation_date) VALUES (6, 2, 4, 4, 112363);
 (select customer_ID, number_days, reservation_date from booking);  
   select * from booking;
  
@@ -234,10 +235,13 @@ PRIMARY KEY (customer_ID)
 );
 desc reward_program;
 
-INSERT INTO reward_program (customer_ID, property_ID, points)  VALUES (1,  2,  95); 
+INSERT INTO reward_program (customer_ID, points)  VALUES (1,  95); 
 
 select * from reward_program;
 SELECT*FROM   (reward_program); 
   
 PROMPT Who was staying in the Dallas Hilton on November 23, 1963?
-
+SELECT customer_ID, number_days, reservation_date 
+from booking 
+where reservation_date = 11231963
+FROM booking;
