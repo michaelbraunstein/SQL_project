@@ -245,7 +245,7 @@ SELECT bl.offense FROM black_list bl WHERE bl.offense is not null;
 
 PROMPT What is the difference between Employee pay rate and department pay rate?
 
-SELECT employee.employee_ID, employee.f_name, employee.l_name, (department.pay_rate-employee_record.pay_rate) AS diff_pay, department.department_name
+SELECT employee.employee_ID, employee.f_name, employee.l_name, employee_record.pay_rate as actual_pay, department.pay_rate AS Department_Pay,  (employee_record.pay_rate-department.pay_rate) AS diff_pay, department.department_name
 FROM employee 
 inner join employee_record on employee.employee_ID = employee_record.employee_ID
 INNER JOIN department on employee_record.department_id  = department.department_ID;   

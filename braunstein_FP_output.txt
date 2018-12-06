@@ -558,14 +558,14 @@ Assasinating the president
 
 What is the difference between Employee pay rate and department pay rate?
 
-EMPLOYEE_ID F_NAME                                                      L_NAME                                                        DIFF_PAY DEPARTMENT_NAME                                            
------------ ----------------------------------------------------------- ----------------------------------------------------------- ---------- -----------------------------------------------------------
-          1 Maximus                                                     Prophet                                                           -599 management                                                 
-          2 Fred                                                        Hart                                                            -49099 reception                                                  
-          3 Betsy                                                       Rubble                                                          -80915 catering                                                   
-          4 George                                                      Hart                                                           -578895 housecleaning                                              
-          5 Xavier                                                      Hart                                                           -166475 maintenance                                                
-          6 Marcelle                                                    Hart                                                           -330675 management                                                 
+EMPLOYEE_ID F_NAME                                                      L_NAME                                                      ACTUAL_PAY DEPARTMENT_PAY   DIFF_PAY DEPARTMENT_NAME                                            
+----------- ----------------------------------------------------------- ----------------------------------------------------------- ---------- -------------- ---------- -----------------------------------------------------------
+          1 Maximus                                                     Prophet                                                          15599          15000        599 management                                                 
+          2 Fred                                                        Hart                                                             59099          10000      49099 reception                                                  
+          3 Betsy                                                       Rubble                                                           89915           9000      80915 catering                                                   
+          4 George                                                      Hart                                                            586895           8000     578895 housecleaning                                              
+          5 Xavier                                                      Hart                                                            176475          10000     166475 maintenance                                                
+          6 Marcelle                                                    Hart                                                            345675          15000     330675 management                                                 
 
 6 rows selected. 
 
