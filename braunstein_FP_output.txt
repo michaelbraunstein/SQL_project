@@ -1,0 +1,576 @@
+
+Table PROPERTY dropped.
+
+
+Table DEPARTMENT dropped.
+
+
+Table EMPLOYEE dropped.
+
+
+Table ROOM dropped.
+
+
+Table BOOKING dropped.
+
+
+Table CUSTOMER dropped.
+
+
+Table REWARD_PROGRAM dropped.
+
+
+Table BLACK_LIST dropped.
+
+
+Table EMPLOYEE_RECORD dropped.
+
+
+Table PROPERTY created.
+
+Name             Null?    Type              
+---------------- -------- ----------------- 
+PROPERTY_ID      NOT NULL NUMBER            
+PROPERTY_NAME             VARCHAR2(59 CHAR) 
+ADDRESS_1_LINE_1          VARCHAR2(59 CHAR) 
+ADDRESS_1_LINE_2          VARCHAR2(59 CHAR) 
+ADDRESS_1_CITY            VARCHAR2(21 CHAR) 
+ADDRESS_1_STATE           VARCHAR2(4 CHAR)  
+ADDRESS_1_ZIP             VARCHAR2(11 CHAR) 
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+PROPERTY_ID PROPERTY_NAME                                               ADDRESS_1_LINE_1                                            ADDRESS_1_LINE_2                                            ADDRESS_1_CITY        ADDR ADDRESS_1_Z
+----------- ----------------------------------------------------------- ----------------------------------------------------------- ----------------------------------------------------------- --------------------- ---- -----------
+          1 Empire State Building                                       350 Fifth Avenue                                                                                                        New York              NY   10036      
+          2 King David Hotel                                            23 King David                                               Tel Aviv                                                                          IL   1q4g6      
+          3 Beverly Wilshire Hotel                                      9500 Wilshire Blvd                                                                                                      Beverly Hills         CA   90212      
+          4 Hilton Fort Worth                                           815 Main St                                                                                                             Fort Worth            TX   76102      
+
+
+PROPERTY_ID PROPERTY_NAME                                               ADDRESS_1_LINE_1                                            ADDRESS_1_LINE_2                                            ADDRESS_1_CITY        ADDR ADDRESS_1_Z
+----------- ----------------------------------------------------------- ----------------------------------------------------------- ----------------------------------------------------------- --------------------- ---- -----------
+          1 Empire State Building                                       350 Fifth Avenue                                                                                                        New York              NY   10036      
+          2 King David Hotel                                            23 King David                                               Tel Aviv                                                                          IL   1q4g6      
+          3 Beverly Wilshire Hotel                                      9500 Wilshire Blvd                                                                                                      Beverly Hills         CA   90212      
+          4 Hilton Fort Worth                                           815 Main St                                                                                                             Fort Worth            TX   76102      
+
+
+Table ROOM created.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+PROPERTY_ID    ROOM_ID ROOM_TYPE                                                  
+----------- ---------- -----------------------------------------------------------
+          1          1 luxury                                                     
+          1          2 luxury                                                     
+          1          3 luxury                                                     
+          1          4 luxury                                                     
+          1          5 luxury                                                     
+          1          6 luxury                                                     
+          2          1 luxury                                                     
+          2          2 luxury                                                     
+          2          3 luxury                                                     
+          2          4 luxury                                                     
+          2          5 luxury                                                     
+
+PROPERTY_ID    ROOM_ID ROOM_TYPE                                                  
+----------- ---------- -----------------------------------------------------------
+          2          6 luxury                                                     
+          3          1 suite                                                      
+          3          2 dble                                                       
+          3          3 suite                                                      
+          3          4 dble                                                       
+          3          5 suite                                                      
+          3          6 dble                                                       
+          4          1 presidential suite                                         
+          4          2 dble                                                       
+          4          3 suite                                                      
+          4          4 dble                                                       
+
+PROPERTY_ID    ROOM_ID ROOM_TYPE                                                  
+----------- ---------- -----------------------------------------------------------
+          4          5 suite                                                      
+          4          6 dble                                                       
+
+24 rows selected. 
+
+Name        Null?    Type         
+----------- -------- ------------ 
+PROPERTY_ID NOT NULL NUMBER       
+ROOM_ID     NOT NULL NUMBER       
+ROOM_TYPE            VARCHAR2(59) 
+
+Table DEPARTMENT created.
+
+Name            Null?    Type              
+--------------- -------- ----------------- 
+DEPARTMENT_ID   NOT NULL NUMBER            
+PAY_RATE                 NUMBER            
+DEPARTMENT_NAME          VARCHAR2(59 CHAR) 
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+DEPARTMENT_ID   PAY_RATE DEPARTMENT_NAME                                            
+------------- ---------- -----------------------------------------------------------
+            1      15000 management                                                 
+            2      10000 maintenance                                                
+            3       8000 housecleaning                                              
+            4       9000 catering                                                   
+            5      10000 reception                                                  
+
+
+DEPARTMENT_ID   PAY_RATE DEPARTMENT_NAME                                            
+------------- ---------- -----------------------------------------------------------
+            1      15000 management                                                 
+            2      10000 maintenance                                                
+            3       8000 housecleaning                                              
+            4       9000 catering                                                   
+            5      10000 reception                                                  
+
+
+Table EMPLOYEE created.
+
+Name           Null?    Type              
+-------------- -------- ----------------- 
+EMPLOYEE_ID    NOT NULL NUMBER            
+F_NAME                  VARCHAR2(59 CHAR) 
+L_NAME                  VARCHAR2(59 CHAR) 
+ADDRESS_LINE_1          VARCHAR2(59 CHAR) 
+ADDRESS_LINE_2          VARCHAR2(59 CHAR) 
+ADDRESS_CITY            VARCHAR2(11 CHAR) 
+ADDRESS_STATE           VARCHAR2(4 CHAR)  
+ADDRESS_ZIP             VARCHAR2(11 CHAR) 
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+EMPLOYEE_ID F_NAME                                                      L_NAME                                                      ADDRESS_LINE_1                                              ADDRESS_LINE_2                                              ADDRESS_CIT ADDR ADDRESS_ZIP
+----------- ----------------------------------------------------------- ----------------------------------------------------------- ----------------------------------------------------------- ----------------------------------------------------------- ----------- ---- -----------
+          1 Maximus                                                     Prophet                                                     15 Thames St                                                second floor                                                Brooklyn    NY   11217      
+          2 Fred                                                        Hart                                                        17 Squadron Blvd                                                                                                        New City    NY   10956      
+          3 Betsy                                                       Rubble                                                      17 Squadron Blvd                                                                                                        New City    NY   10956      
+          4 George                                                      Hart                                                        17 Squadron Blvd                                                                                                        New City    NY   10956      
+          5 Xavier                                                      Hart                                                        17 Squadron Blvd                                                                                                        New City    NY   10956      
+          6 Marcelle                                                    Hart                                                        17 Squadron Blvd                                                                                                        New City    NY   10956      
+          7 Gennifer                                                    Flowers                                                     11 Main Blvd                                                                                                            Little Rock AR   10956      
+          8 Monica                                                      Lewinsky                                                    27 Broadway                                                 Apt 19                                                      New York    NY   10006      
+          9 Malcolm                                                     Little                                                      3448 Pinkney St                                                                                                         Omaha       NE   68022      
+         10 John                                                        Thompson                                                    1 Bell Drive                                                                                                            Highland    NY   12528      
+         11 Fred                                                        Vanderbilt                                                  119 Vanderbilt Park Rd                                                                                                  Hyde Park   NY   12538      
+
+EMPLOYEE_ID F_NAME                                                      L_NAME                                                      ADDRESS_LINE_1                                              ADDRESS_LINE_2                                              ADDRESS_CIT ADDR ADDRESS_ZIP
+----------- ----------------------------------------------------------- ----------------------------------------------------------- ----------------------------------------------------------- ----------------------------------------------------------- ----------- ---- -----------
+         12 Michael                                                     Blomberg                                                    334 E. 74th St.                                                                                                         New York    NY   10021      
+         13 Elian                                                       Gonzalez                                                    2319 NW 2nd St                                                                                                          Miami       FL   33125      
+
+13 rows selected. 
+
+
+EMPLOYEE_ID F_NAME                                                      L_NAME                                                      ADDRESS_LINE_1                                              ADDRESS_LINE_2                                              ADDRESS_CIT ADDR ADDRESS_ZIP
+----------- ----------------------------------------------------------- ----------------------------------------------------------- ----------------------------------------------------------- ----------------------------------------------------------- ----------- ---- -----------
+          1 Maximus                                                     Prophet                                                     15 Thames St                                                second floor                                                Brooklyn    NY   11217      
+          2 Fred                                                        Hart                                                        17 Squadron Blvd                                                                                                        New City    NY   10956      
+          3 Betsy                                                       Rubble                                                      17 Squadron Blvd                                                                                                        New City    NY   10956      
+          4 George                                                      Hart                                                        17 Squadron Blvd                                                                                                        New City    NY   10956      
+          5 Xavier                                                      Hart                                                        17 Squadron Blvd                                                                                                        New City    NY   10956      
+          6 Marcelle                                                    Hart                                                        17 Squadron Blvd                                                                                                        New City    NY   10956      
+          7 Gennifer                                                    Flowers                                                     11 Main Blvd                                                                                                            Little Rock AR   10956      
+          8 Monica                                                      Lewinsky                                                    27 Broadway                                                 Apt 19                                                      New York    NY   10006      
+          9 Malcolm                                                     Little                                                      3448 Pinkney St                                                                                                         Omaha       NE   68022      
+         10 John                                                        Thompson                                                    1 Bell Drive                                                                                                            Highland    NY   12528      
+         11 Fred                                                        Vanderbilt                                                  119 Vanderbilt Park Rd                                                                                                  Hyde Park   NY   12538      
+
+EMPLOYEE_ID F_NAME                                                      L_NAME                                                      ADDRESS_LINE_1                                              ADDRESS_LINE_2                                              ADDRESS_CIT ADDR ADDRESS_ZIP
+----------- ----------------------------------------------------------- ----------------------------------------------------------- ----------------------------------------------------------- ----------------------------------------------------------- ----------- ---- -----------
+         12 Michael                                                     Blomberg                                                    334 E. 74th St.                                                                                                         New York    NY   10021      
+         13 Elian                                                       Gonzalez                                                    2319 NW 2nd St                                                                                                          Miami       FL   33125      
+
+13 rows selected. 
+
+
+Table EMPLOYEE_RECORD created.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+EMPLOYEE_ID PROPERTY_ID DEPARTMENT_ID
+----------- ----------- -------------
+          1           1             1
+          2           1             5
+          3           2             4
+          4           2             3
+          5           3             2
+          6           4             1
+
+6 rows selected. 
+
+
+EMPLOYEE_ID PROPERTY_ID DEPARTMENT_ID  HIRE_DATE   PAY_RATE
+----------- ----------- ------------- ---------- ----------
+          1           1             1    4221997      15599
+          2           1             5   11232018      59099
+          3           2             4    1012001      89915
+          4           2             3   11231963     586895
+          5           3             2    8211986     176475
+          6           4             1    9211992     345675
+
+6 rows selected. 
+
+
+Table CUSTOMER created.
+
+Name              Null?    Type              
+----------------- -------- ----------------- 
+CUSTOMER_ID       NOT NULL NUMBER            
+F_NAME                     VARCHAR2(59 CHAR) 
+L_NAME                     VARCHAR2(59 CHAR) 
+ADDRESS_1_LINE_1           VARCHAR2(59 CHAR) 
+ADDRESS_1_LINE_2           VARCHAR2(59 CHAR) 
+ADDRESS_1_CITY             VARCHAR2(21 CHAR) 
+ADDRESS_1_STATE            VARCHAR2(4 CHAR)  
+ADDRESS_1_ZIP              VARCHAR2(11 CHAR) 
+CREDIT_CARD_1_EXP          VARCHAR2(5 CHAR)  
+CREDIT_CARD_1_NUM          VARCHAR2(21 CHAR) 
+ACCOUNT_BALANCE            NUMBER(11)        
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+CUSTOMER_ID F_NAME                                                      L_NAME                                                      ADDRESS_1_LINE_1                                            ADDRESS_1_LINE_2                                            ADDRESS_1_CITY        ADDR ADDRESS_1_Z CREDI CREDIT_CARD_1_NUM     ACCOUNT_BALANCE
+----------- ----------------------------------------------------------- ----------------------------------------------------------- ----------------------------------------------------------- ----------------------------------------------------------- --------------------- ---- ----------- ----- --------------------- ---------------
+          1 Max                                                         Antin                                                       950 Flemington St                                           second floor                                                Pittsburgh            PA   15217       11/29 6011-999-9999                       0
+          2 Joseph                                                      Antin                                                       956 Flemington St                                                                                                       Pittsburgh            PA   15217       11/29 6011-999-9999                       0
+          3 Florence                                                    Antin                                                       956 Flemington St                                                                                                       Pittsburgh            PA   15217       11/29 6011-999-9999                       0
+          4 Brad                                                        Rephen                                                      11 Lime Kiln St                                                                                                         Spring Valley         NY   10952       11/29 6011-999-9999                       0
+          5 Fred                                                        Hart                                                        17 Squadron Blvd                                            Suite 312                                                   New City              NY   10956       11/29 6011-999-9999                       0
+          6 George HW                                                   BUSH                                                        2430 E ST NW                                                Suite 219                                                   Washington            DC   20037       11/29 6011-999-9999                       0
+          7 John Fitzgerald                                             Kennedy                                                     100 Marchant Avenue                                                                                                     Hyannis Port          MA   02601       11/63 6011-999-9999                       0
+
+7 rows selected. 
+
+
+CUSTOMER_ID F_NAME                                                      L_NAME                                                      ADDRESS_1_LINE_1                                            ADDRESS_1_LINE_2                                            ADDRESS_1_CITY        ADDR ADDRESS_1_Z CREDI CREDIT_CARD_1_NUM     ACCOUNT_BALANCE
+----------- ----------------------------------------------------------- ----------------------------------------------------------- ----------------------------------------------------------- ----------------------------------------------------------- --------------------- ---- ----------- ----- --------------------- ---------------
+          1 Max                                                         Antin                                                       950 Flemington St                                           second floor                                                Pittsburgh            PA   15217       11/29 6011-999-9999                       0
+          2 Joseph                                                      Antin                                                       956 Flemington St                                                                                                       Pittsburgh            PA   15217       11/29 6011-999-9999                       0
+          3 Florence                                                    Antin                                                       956 Flemington St                                                                                                       Pittsburgh            PA   15217       11/29 6011-999-9999                       0
+          4 Brad                                                        Rephen                                                      11 Lime Kiln St                                                                                                         Spring Valley         NY   10952       11/29 6011-999-9999                       0
+          5 Fred                                                        Hart                                                        17 Squadron Blvd                                            Suite 312                                                   New City              NY   10956       11/29 6011-999-9999                       0
+          6 George HW                                                   BUSH                                                        2430 E ST NW                                                Suite 219                                                   Washington            DC   20037       11/29 6011-999-9999                       0
+          7 John Fitzgerald                                             Kennedy                                                     100 Marchant Avenue                                                                                                     Hyannis Port          MA   02601       11/63 6011-999-9999                       0
+
+7 rows selected. 
+
+
+Table BOOKING created.
+
+Name             Null?    Type   
+---------------- -------- ------ 
+PROPERTY_ID      NOT NULL NUMBER 
+ROOM_ID          NOT NULL NUMBER 
+CUSTOMER_ID      NOT NULL NUMBER 
+RESERVATION_DATE          NUMBER 
+NUMBER_DAYS               NUMBER 
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+CUSTOMER_ID NUMBER_DAYS RESERVATION_DATE
+----------- ----------- ----------------
+          1           3           121119
+          2           4           244551
+          3           5           223114
+          4           3           232111
+          5           2           223331
+          6           1           223451
+          7           4           112363
+          6           2           112363
+
+8 rows selected. 
+
+
+PROPERTY_ID    ROOM_ID CUSTOMER_ID RESERVATION_DATE NUMBER_DAYS
+----------- ---------- ----------- ---------------- -----------
+          1          1           1           121119           3
+          2          2           2           244551           4
+          3          3           3           223114           5
+          1          1           4           232111           3
+          2          2           5           223331           2
+          4          2           6           223451           1
+          4          3           7           112363           4
+          4          6           6           112363           2
+
+8 rows selected. 
+
+
+Table BLACK_LIST created.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+Name        Null?    Type         
+----------- -------- ------------ 
+CUSTOMER_ID NOT NULL NUMBER       
+PROPERTY_ID NOT NULL NUMBER       
+OFFENSE              VARCHAR2(59) 
+
+CUSTOMER_ID PROPERTY_ID OFFENSE                                                    
+----------- ----------- -----------------------------------------------------------
+          1           1 Monkey Business                                            
+          6           1 Assasinating the president                                 
+
+
+CUSTOMER_ID PROPERTY_ID OFFENSE                                                    
+----------- ----------- -----------------------------------------------------------
+          1           1 Monkey Business                                            
+          6           1 Assasinating the president                                 
+
+
+Table REWARD_PROGRAM created.
+
+Name        Null?    Type   
+----------- -------- ------ 
+CUSTOMER_ID NOT NULL NUMBER 
+POINTS               NUMBER 
+
+1 row inserted.
+
+
+CUSTOMER_ID     POINTS
+----------- ----------
+          1         95
+
+
+CUSTOMER_ID     POINTS
+----------- ----------
+          1         95
+
+Who was staying in the Dallas Hilton on November 23, 1963?
+
+RESERVATION_DATE CUSTOMER_ID F_NAME                                                      L_NAME                                                      CUSTOMER_ID
+---------------- ----------- ----------------------------------------------------------- ----------------------------------------------------------- -----------
+          112363           6 George HW                                                   BUSH                                                                  6
+          112363           7 John Fitzgerald                                             Kennedy                                                               7
+
+How many customers are from Pittsburgh?
+
+CUSTOMER_ID F_NAME                                                      L_NAME                                                     
+----------- ----------------------------------------------------------- -----------------------------------------------------------
+          3 Florence                                                    Antin                                                      
+          2 Joseph                                                      Antin                                                      
+          1 Max                                                         Antin                                                      
+
+What are all the reasons patron have been black listed?
+
+OFFENSE                                                    
+-----------------------------------------------------------
+Monkey Business
+Assasinating the president
+
+What is the difference between Employee pay rate and department pay rate?
+
+EMPLOYEE_ID F_NAME                                                      L_NAME                                                        DIFF_PAY DEPARTMENT_NAME                                            
+----------- ----------------------------------------------------------- ----------------------------------------------------------- ---------- -----------------------------------------------------------
+          1 Maximus                                                     Prophet                                                           -599 management                                                 
+          2 Fred                                                        Hart                                                            -49099 reception                                                  
+          3 Betsy                                                       Rubble                                                          -80915 catering                                                   
+          4 George                                                      Hart                                                           -578895 housecleaning                                              
+          5 Xavier                                                      Hart                                                           -166475 maintenance                                                
+          6 Marcelle                                                    Hart                                                           -330675 management                                                 
+
+6 rows selected. 
+
+Name            Null?    Type              
+--------------- -------- ----------------- 
+DEPARTMENT_ID   NOT NULL NUMBER            
+PAY_RATE                 NUMBER            
+DEPARTMENT_NAME          VARCHAR2(59 CHAR) 
