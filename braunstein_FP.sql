@@ -20,12 +20,12 @@ DROP TABLE employee_record CASCADE CONSTRAINTS;
 
 CREATE TABLE property (
 property_ID NUMBER,
-property_name VARCHAR2 (59 CHAR),
-address_1_line_1 VARCHAR2(59 CHAR),
-address_1_line_2 VARCHAR2(59 CHAR),
+property_name VARCHAR2 (29 CHAR),
+address_1_line_1 VARCHAR2(29 CHAR),
+address_1_line_2 VARCHAR2(19 CHAR),
 address_1_city VARCHAR2(21 CHAR),
 address_1_state VARCHAR2(4 CHAR),
-address_1_zip VARCHAR2(11 CHAR),
+address_1_zip VARCHAR2(6 CHAR),
 PRIMARY KEY (property_ID)
 );
 
@@ -43,7 +43,7 @@ INSERT INTO property VALUES (4, 'Hilton Fort Worth', '815 Main St', null, 'Fort 
 CREATE TABLE room(
 property_ID number,
 room_ID number,
-room_type varchar2 (59),
+room_type varchar2 (11 char),
 primary key (property_ID, room_ID),
 FOREIGN KEY (property_ID) references property
 );
@@ -78,7 +78,7 @@ desc room;
 CREATE TABLE department (
 department_ID number,
 pay_rate number,
-department_name VARCHAR2(59 CHAR),
+department_name VARCHAR2(12 CHAR),
 primary key (department_ID) 
 );
 
@@ -96,13 +96,13 @@ INSERT INTO department (department_ID, pay_rate, department_name) VALUES ( 5, 10
 
 CREATE TABLE employee (
 employee_ID number primary key ,
-f_name VARCHAR2(59 CHAR),
-l_name VARCHAR2(59 CHAR),
-address_line_1 VARCHAR2(59 CHAR),
-address_line_2 VARCHAR2(59 CHAR),
+f_name VARCHAR2(12 CHAR),
+l_name VARCHAR2(12 CHAR),
+address_line_1 VARCHAR2(29 CHAR),
+address_line_2 VARCHAR2(19 CHAR),
 address_city VARCHAR2(11 CHAR),
 address_state VARCHAR2(4 CHAR),
-address_zip VARCHAR2(11 CHAR));
+address_zip VARCHAR2(8 CHAR));
 
 desc employee;
 INSERT INTO employee VALUES ( 1,  'Maximus', 'Prophet', '15 Thames St', 'second floor', 'Brooklyn', 'NY', '11217');
@@ -147,16 +147,16 @@ INSERT INTO employee_record (employee_ID, property_ID, department_ID, hire_date,
 
 CREATE TABLE customer (
 customer_ID NUMBER PRIMARY KEY,
-f_name VARCHAR2(59 CHAR),
-l_name VARCHAR2(59 CHAR),
-address_1_line_1 VARCHAR2(59 CHAR),
-address_1_line_2 VARCHAR2(59 CHAR),
+f_name VARCHAR2(19 CHAR),
+l_name VARCHAR2(19 CHAR),
+address_1_line_1 VARCHAR2(29 CHAR),
+address_1_line_2 VARCHAR2(29 CHAR),
 address_1_city VARCHAR2(21 CHAR),
 address_1_state VARCHAR2(4 CHAR),
-address_1_zip VARCHAR2(11 CHAR),
+address_1_zip VARCHAR2(5 CHAR),
 credit_card_1_exp VARCHAR2(5 CHAR),
 credit_card_1_num VARCHAR2(21 CHAR),
-account_balance NUMBER(11) DEFAULT 0);
+account_balance NUMBER(7) DEFAULT 0);
 
 desc customer;
 
