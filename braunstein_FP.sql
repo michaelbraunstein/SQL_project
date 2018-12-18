@@ -20,7 +20,7 @@ DROP TABLE employee_record CASCADE CONSTRAINTS;
 
 CREATE TABLE property (
 property_ID NUMBER,
-property_name VARCHAR2 (29 CHAR),
+property_name VARCHAR2 (69 CHAR),
 address_1_line_1 VARCHAR2(29 CHAR),
 address_1_line_2 VARCHAR2(19 CHAR),
 address_1_city VARCHAR2(21 CHAR),
@@ -43,7 +43,7 @@ INSERT INTO property VALUES (4, 'Hilton Fort Worth', '815 Main St', null, 'Fort 
 CREATE TABLE room(
 property_ID number,
 room_ID number,
-room_type varchar2 (11 char),
+room_type varchar2 (59 char),
 primary key (property_ID, room_ID),
 FOREIGN KEY (property_ID) references property
 );
@@ -78,7 +78,7 @@ desc room;
 CREATE TABLE department (
 department_ID number,
 pay_rate number,
-department_name VARCHAR2(12 CHAR),
+department_name VARCHAR2(22 CHAR),
 primary key (department_ID) 
 );
 
@@ -209,7 +209,7 @@ offense VARCHAR2 ( 59)
 );
 
 INSERT INTO black_list (customer_ID, property_ID, offense) VALUES (1, 1, 'Monkey Business');
-INSERT INTO black_list (customer_ID, property_ID, offense) VALUES (6, 1, 'Assasinating the president');
+INSERT INTO black_list (customer_ID, property_ID, offense) VALUES (6, 1, 'Raising New Taxes');
 
 desc black_list;
 (select customer_ID, property_ID, offense from black_list);  
@@ -253,3 +253,13 @@ INNER JOIN department on employee_record.department_id  = department.department_
 --JOIN department on department_ID = employee_record.department_ID;
 --JOIN employee_record employee_ID on employee.employee_ID
 desc department
+
+Prompt
+prompt Give a pay raise of $10,000 to employee Maximus Prophet 
+
+update employee_record set employee_record.pay_rate = 25599 where employee_record.employee_ID = 1 ;
+
+SELECT employee.employee_ID, employee.f_name, employee.l_name, employee_record.pay_rate as new_pay_rate, department.department_name
+FROM employee 
+inner join employee_record on employee.employee_ID = employee_record.employee_ID 
+INNER JOIN department on employee_record.department_id  = department.department_ID where employee.employee_ID = 1; 
